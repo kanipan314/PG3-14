@@ -19,15 +19,11 @@ int main() {
 	//マルチスレッド
 	
 	std::thread first(PrintNumber,1,2);
-	std::thread second(PrintNumber,2,3);
-	std::thread theard(PrintNumber,3,4);
-
-	//表示
 	first.join();
+	std::thread second(PrintNumber,2,3);
 	second.join();
+	std::thread theard(PrintNumber,3,4);
 	theard.join();
-
-
 
 	return 0;
 }
